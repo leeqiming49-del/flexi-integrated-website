@@ -1,4 +1,4 @@
-const clients = [["HUAWEI", "huawei"], ["HONOR", ""], ["mi", "mi"], ["DJI", ""], ["swatch", ""], ["oppo", ""]];
+const clients = [["HUAWEI", "huawei"], ["HONOR", ""], ["mi", "mi"], ["DJI", ""], ["swatch", ""]];
 
 export function LogoRiver() {
   return (
