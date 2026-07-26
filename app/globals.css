@@ -10,18 +10,19 @@ img { display: block; width: 100%; }
 .arrow-link::after { content: "→"; font-size: 18px; transition: transform .25s ease; }
 .arrow-link:hover::after { transform: translateX(5px); }
 
-.hero { position: relative; min-height: 100svh; color: white; background: #302a24 url('/images/hero/hero-showroom.png') center/cover no-repeat; }
+.hero { position: relative; min-height: 100svh; padding-top: 76px; color: white; background: #302a24 url('/images/hero/hero-showroom.png') center/cover no-repeat; }
 .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,9,7,.67), rgba(10,9,7,.12) 68%), linear-gradient(0deg, rgba(10,9,7,.25), transparent 45%); }
-.navbar { position: relative; z-index: 2; height: 100px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; }
+.navbar { position: relative; z-index: 2; height: 76px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; flex-direction: column; align-items: center; letter-spacing: .42em; font-size: 19px; line-height: 1; }
 .brand small { margin-top: 7px; font-size: 6px; letter-spacing: .38em; }
+.brand-logo { width: 145px; height: 52px; object-fit: contain; filter: none; }
 .nav-links { display: flex; align-items: center; gap: clamp(24px, 3vw, 54px); font-size: 11px; }
 .nav-links a { position: relative; padding: 8px 0; }
 .nav-links a:first-child::after { content: ""; position: absolute; height: 1px; background: white; left: 0; right: 0; bottom: 2px; }
 .nav-mini { text-transform: uppercase; letter-spacing: .12em; opacity: .85; }
 .menu-icon { display: grid; width: 24px; gap: 5px; }
 .menu-icon i { display: block; height: 1px; background: currentColor; }
-.hero-copy { position: relative; z-index: 1; min-height: calc(100svh - 100px); display: flex; flex-direction: column; justify-content: center; padding: 2vh 7.4vw 14vh; }
+.hero-copy { position: relative; z-index: 1; min-height: calc(100svh - 76px); display: flex; flex-direction: column; justify-content: center; padding: 2vh 7.4vw 14vh; }
 .hero h1 { max-width: 690px; margin: 0; font-size: clamp(64px, 7.3vw, 128px); line-height: .91; font-weight: 300; letter-spacing: -.055em; }
 .hero-subtitle { margin: 32px 0; font-size: clamp(14px, 1.3vw, 20px); line-height: 1.45; letter-spacing: .02em; }
 .outline-button { width: max-content; border: 1px solid rgba(255,255,255,.8); padding: 17px 24px; }
@@ -30,11 +31,11 @@ img { display: block; width: 100%; }
 
 .logo-river { background: #f6f3ee; overflow: hidden; padding: 21px 0 25px; border-bottom: 1px solid #ded8cf; }
 .river-label { margin: 0 0 17px; text-align: center; font-size: 8px; letter-spacing: .2em; text-transform: uppercase; }
-.river-track { display: flex; width: max-content; animation: river 24s linear infinite; }
+.river-track { display: flex; width: max-content; animation: river 30s linear infinite; }
 .river-track:hover { animation-play-state: paused; }
-.river-set { display: flex; align-items: center; gap: clamp(70px, 9vw, 160px); padding: 0 clamp(35px, 4.5vw, 80px); }
-.client-logo { display: grid; place-items: center; min-width: 120px; height: 44px; }
-.client-logo img { width: 150px; max-width: 100%; height: 44px; object-fit: contain; }
+.river-set { display: flex; align-items: center; gap: clamp(50px, 6vw, 96px); padding: 0 clamp(28px, 3vw, 52px); }
+.client-logo { display: grid; place-items: center; width: 132px; min-width: 132px; height: 44px; }
+.client-logo img { width: auto; max-width: 132px; height: auto; max-height: 40px; object-fit: contain; }
 @keyframes river { to { transform: translateX(-50%); } }
 
 .featured { position: relative; min-height: 58vw; max-height: 760px; color: white; background: #44372e url('/images/projects/huawei/Hero.png') center/cover no-repeat; }
@@ -70,12 +71,14 @@ img { display: block; width: 100%; }
 .contact-item a, .contact-item address { font-size: 13px; line-height: 1.65; font-style: normal; }
 .footer { min-height: 82px; padding: 0 5vw; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; background: #11110f; color: white; }
 .footer .brand { justify-self: start; font-size: 14px; }
+.footer .brand-logo { width: 110px; height: 40px; }
 .footer-nav { display: flex; gap: 32px; font-size: 10px; }
 .copyright { justify-self: end; font-size: 9px; opacity: .65; }
 
 @media (max-width: 900px) {
   .navbar { height: 78px; padding: 0 25px; }
   .nav-links a, .nav-mini { display: none; }
+  .hero { padding-top: 78px; }
   .hero-copy { min-height: calc(100svh - 78px); padding: 0 32px 13vh; justify-content: center; }
   .hero h1 { font-size: clamp(55px, 13vw, 90px); max-width: 600px; }
   .about-grid, .trust { grid-template-columns: 1fr; }
@@ -91,6 +94,7 @@ img { display: block; width: 100%; }
 @media (max-width: 600px) {
   .hero { min-height: 640px; background-position: 58% center; }
   .brand { font-size: 17px; }
+  .brand-logo { width: 112px; height: 40px; }
   .hero-copy { min-height: 562px; padding: 25px 25px 95px; }
   .hero h1 { font-size: 50px; line-height: .98; max-width: 320px; }
   .hero-subtitle { margin: 20px 0 25px; font-size: 12px; }
@@ -98,7 +102,8 @@ img { display: block; width: 100%; }
   .scroll-cue { bottom: 18px; }
   .logo-river { padding-top: 17px; }
   .river-set { gap: 42px; padding-inline: 24px; }
-  .client-logo { min-width: 92px; font-size: 17px; }
+  .client-logo { width: 104px; min-width: 104px; }
+  .client-logo img { width: auto; max-width: 104px; height: auto; max-height: 34px; }
   .featured { min-height: 460px; background-position: 60% center; }
   .featured-info { left: 24px; right: 24px; bottom: 92px; }
   .featured h2 { max-width: 260px; font-size: 30px; }
@@ -121,8 +126,7 @@ img { display: block; width: 100%; }
 :focus-visible { outline: 2px solid #a96f3c; outline-offset: 5px; }
 .arrow-link::after { content: "\2192"; }
 .scroll-cue::before { content: "\2193"; }
-.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; color: white; transition: background-color .45s ease, color .45s ease, height .45s ease; }
-.navbar-scrolled { height: 76px; color: var(--ink); background: rgba(246,243,238,.96); border-bottom: 1px solid rgba(70,60,50,.12); }
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; color: var(--ink); background: rgba(246,243,238,.96); border-bottom: 1px solid rgba(70,60,50,.12); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
 .desktop-nav { display: flex; align-items: center; gap: clamp(28px, 3.3vw, 56px); font-size: 11px; }
 .desktop-nav a { position: relative; padding: 8px 0; }
 .desktop-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 2px; height: 1px; background: currentColor; transition: right .25s ease; }
