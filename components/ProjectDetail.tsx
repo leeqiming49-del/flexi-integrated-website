@@ -4,6 +4,7 @@ import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 import { ProjectGallery } from "./ProjectGallery";
 import Link from "next/link";
+import Image from "next/image";
 
 export function ProjectDetail({ project }: { project: Project }) {
   const index = projects.findIndex((item) => item.slug === project.slug);
@@ -12,6 +13,7 @@ export function ProjectDetail({ project }: { project: Project }) {
   return (
     <main className="inner-page">
       <Navbar />
+      <div className="project-detail-hero"><Image unoptimized priority src={project.coverImage} width={1800} height={1100} sizes="100vw" alt={`${project.brand} completed project interior`} /></div>
       <header className="project-header"><p className="eyebrow">Selected work · {project.brand}</p><h1>{project.title}</h1><p className="project-lead">{project.description}</p><div className="project-meta"><p><span>Category</span>{project.category}</p><p><span>Location</span>{project.location}</p></div></header>
       <section className="project-overview"><div><p className="eyebrow">Project Overview</p><h2>Considered delivery,<br />from site to finish.</h2></div><div className="overview-details"><dl><div><dt>Client / Brand</dt><dd>{project.brand}</dd></div><div><dt>Project Type</dt><dd>{project.category}</dd></div><div><dt>Location</dt><dd>{project.location}</dd></div></dl><p>{project.summary}</p></div></section>
       <section className="project-scope"><div><p className="eyebrow">Scope of Work</p><h2>What Flexi handled</h2></div><ul className="scope-tags">{project.scope.map((item) => <li key={item}>{item}</li>)}</ul></section>

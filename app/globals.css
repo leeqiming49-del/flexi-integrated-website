@@ -33,12 +33,11 @@ img { display: block; width: 100%; }
 .river-track { display: flex; width: max-content; animation: river 24s linear infinite; }
 .river-track:hover { animation-play-state: paused; }
 .river-set { display: flex; align-items: center; gap: clamp(70px, 9vw, 160px); padding: 0 clamp(35px, 4.5vw, 80px); }
-.client-logo { min-width: 120px; text-align: center; font-size: 22px; font-weight: 600; letter-spacing: -.05em; }
-.client-logo.huawei { letter-spacing: .02em; font-size: 17px; }
-.client-logo.mi { color: #ef6c19; font-size: 24px; }
+.client-logo { display: grid; place-items: center; min-width: 120px; height: 44px; }
+.client-logo img { width: 150px; max-width: 100%; height: 44px; object-fit: contain; }
 @keyframes river { to { transform: translateX(-50%); } }
 
-.featured { position: relative; min-height: 58vw; max-height: 760px; color: white; background: #44372e url('/images/hero/hero-showroom.png') center/cover no-repeat; }
+.featured { position: relative; min-height: 58vw; max-height: 760px; color: white; background: #44372e url('/images/projects/huawei/Hero.png') center/cover no-repeat; }
 .featured::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,14,11,.66), transparent 64%), linear-gradient(0deg, rgba(10,8,6,.35), transparent 45%); }
 .featured-info { position: absolute; z-index: 1; left: 5vw; bottom: 12%; }
 .featured h2 { max-width: 560px; margin: 0 0 19px; font-size: clamp(30px, 4vw, 68px); font-weight: 300; letter-spacing: -.04em; }
@@ -46,7 +45,7 @@ img { display: block; width: 100%; }
 .featured .arrow-link { position: absolute; z-index: 1; right: 5vw; bottom: 10%; }
 
 .about-grid { display: grid; grid-template-columns: 1fr 1.07fr; min-height: 650px; }
-.about-image { background: #333 url('/images/about/flexi-factory.png') center/cover no-repeat; min-height: 560px; }
+.about-image { background: #333 url('/images/about/office.jpg') center/cover no-repeat; min-height: 560px; }
 .about-copy { padding: clamp(60px, 7vw, 130px); display: flex; flex-direction: column; justify-content: center; }
 .about-copy h2, .trust-copy h2 { margin: 0 0 24px; font-size: clamp(40px, 5vw, 78px); font-weight: 300; letter-spacing: -.045em; }
 .about-copy > p { max-width: 610px; font-size: 15px; line-height: 1.75; }
@@ -61,7 +60,7 @@ img { display: block; width: 100%; }
 .trust-point { border-top: 1px solid var(--line); padding-top: 18px; }
 .trust-point strong { display: block; font-size: 23px; font-weight: 300; }
 .trust-point span { font-size: 10px; }
-.trust-image { min-height: 650px; background: #604a36 url('/images/trust/built-on-trust.png') center/cover no-repeat; }
+.trust-image { min-height: 650px; background: #604a36 url('/images/trust/workshop.jpg') center/cover no-repeat; }
 
 .contact { display: grid; grid-template-columns: 1.15fr repeat(3, 1fr); gap: 40px; padding: 68px 5vw; background: #f4f0ea; border-top: 1px solid var(--line); }
 .contact h2 { margin: 0 0 12px; font-size: 36px; font-weight: 300; }
@@ -251,6 +250,8 @@ img { display: block; width: 100%; }
 .project-card:hover > .arrow-link::after { transform: translateX(5px); }
 
 .project-header { padding-bottom: 90px; }
+.project-detail-hero { padding-top: 76px; overflow: hidden; background: #d4cdc3; }
+.project-detail-hero img { height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
 .project-lead { max-width: 720px; margin: 44px 0 0 28%; font-size: clamp(18px, 2vw, 28px); line-height: 1.55; }
 .project-meta { grid-template-columns: repeat(2, 1fr); max-width: 550px; margin-top: 55px; }
 .project-overview, .project-scope { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8vw; padding: 110px 7vw; border-top: 1px solid var(--line); }
@@ -384,6 +385,52 @@ img { display: block; width: 100%; }
   .gallery-heading > p { font-size: 14px; }
   .project-scope .scope-tags { gap: 10px; }
   .project-scope .scope-tags li { padding: 11px 15px; font-size: 12px; }
+}
+
+/* Final layout polish */
+.project-list { grid-auto-rows: 1fr; }
+.project-card, .project-card:nth-child(even) { height: 100%; }
+.project-cover { width: 100%; aspect-ratio: 4 / 5; }
+.project-cover img, .project-card:nth-child(even) .project-cover img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+.project-cover-huawei img { object-position: 52% center; }
+.project-cover-honor img { object-position: center; }
+.project-cover-xiaomi img { object-position: 48% center; }
+.project-summary { width: 100%; min-height: 248px; }
+.project-card > .arrow-link { margin-top: auto; }
+
+.enquiry-panel-head h2 { font-size: clamp(40px, 5vw, 60px); }
+.enquiry-panel-head .eyebrow { margin-bottom: 20px; }
+.enquiry-close { margin: 0; padding: 5px 8px; }
+.contact-intro .enquiry-intro { margin: 38px 0 52px; }
+.enquiry-form { row-gap: 34px; column-gap: 26px; }
+.enquiry-form label { gap: 12px; }
+
+@media (max-width: 767px) {
+  .project-list { grid-auto-rows: auto; gap: 52px; padding-bottom: 82px; }
+  .project-card, .project-card:nth-child(even) { height: auto; }
+  .project-cover { margin-bottom: 22px; aspect-ratio: 4 / 3; }
+  .project-cover img, .project-card:nth-child(even) .project-cover img { width: 100%; height: 100%; aspect-ratio: auto; }
+  .project-summary { min-height: 0; }
+  .project-summary .card-category { margin-bottom: 21px; }
+  .project-card > .arrow-link { margin-top: 22px; padding-top: 0; }
+
+  .enquiry-panel { padding: 27px 24px 38px; }
+  .enquiry-panel-head h2 { font-size: clamp(38px, 11vw, 44px); line-height: 1; }
+  .enquiry-panel-head .eyebrow { margin-bottom: 15px; }
+  .enquiry-close { margin-right: -5px; }
+  .contact-intro .enquiry-intro { margin: 27px 0 34px; }
+  .enquiry-form { gap: 26px; }
+  .enquiry-form label { gap: 10px; }
+}
+
+@media (max-width: 600px) {
+  .contact { gap: 25px; padding: 38px 24px; }
+  .contact-intro { margin-bottom: 2px; }
+  .contact-intro p { line-height: 1.5; }
+  .contact-action { margin-top: 20px; }
+  .contact-item small { margin-bottom: 8px; }
+  .contact-item a, .contact-item address { line-height: 1.5; }
+  .footer { gap: 14px; min-height: 0; padding: 20px 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
